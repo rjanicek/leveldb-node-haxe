@@ -1,0 +1,6 @@
+*.js.map
+/test/browser/api
+/test/browser/janicek-core-test-browser.js
+/test/node/janicek-core-test-node.js
+/test/node/node_modules
+/doc/bin

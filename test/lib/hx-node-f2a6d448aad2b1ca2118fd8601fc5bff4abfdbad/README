@@ -1,0 +1,63 @@
+
+hx-node provides haxe type signatures to Node.js 0.6x.
+
+The base Node API is in js/Node.hx.
+
+There are no abstractions or wrappers just the raw api, this allows you to
+implement wrappers on top to your own taste. For example, I've wrapped basic
+functionality with futures and map strings events to enums here
+https://github.com/cloudshift/Sys.
+
+Also find on haxelib as "nodejs".
+
+Compiling with haxe
+-------------------
+
+For example, file Ex1.hx
+
+import js.Node;
+
+class Ex1 {
+   public static function main() {
+      trace(Node.process.memoryUsage());
+      trace(Node.process.memoryUsage().heapTotal);
+
+      Node.dns.resolve("cloudshift.cl","A",function(err,ips:Array<Dynamic>) {
+          trace(ips);
+          });
+   }
+
+}
+
+Compile with
+
+haxe -D nodejs -cp . -js ex1.js -main Ex1
+
+where -cp . adds the current directory to the classpath which should include the provided js 
+directory. You must add  -D nodejs to the compile line.
+
+and then to execute
+
+node ex1.js
+
+Ex1.hx:6: {
+	rss : 10039296, 
+	vsize : 638578688, 
+	heapTotal : 5005376, 
+	heapUsed : 2497376
+}
+Ex1.hx:7: 5029952
+Ex1.hx:11: [204.232.203.106]
+
+
+To compile with haxelib
+
+haxe -lib nodejs .... etc
+
+
+
+Other sources of info
+---------------------
+
+haxenode.org describes using these wrappers
+haxe-node.js google group to leave a message

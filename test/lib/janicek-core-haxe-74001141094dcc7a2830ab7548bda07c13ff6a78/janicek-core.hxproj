@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project version="2">
+  <!-- Output SWF options -->
+  <output>
+    <movie outputType="Application" />
+    <movie input="" />
+    <movie path="test\browser\janicek-core-test-browser.js" />
+    <movie fps="0" />
+    <movie width="0" />
+    <movie height="0" />
+    <movie version="1" />
+    <movie minorVersion="0" />
+    <movie platform="JavaScript" />
+    <movie background="#FFFFFF" />
+  </output>
+  <!-- Other classes to be compiled into your SWF -->
+  <classpaths>
+    <class path="src" />
+    <class path="test\src" />
+    <class path="lib\html5-haxe-7423e2b0990c7948fc239d7e3fc78c892c272114" />
+    <class path="lib\mocha.js-haxe-37b8008e5f9925b41ef9ee7781f0e29e174b04eb\src" />
+  </classpaths>
+  <!-- Build options -->
+  <build>
+    <option directives="" />
+    <option flashStrict="False" />
+    <option mainClass="MainBrowser" />
+    <option enabledebug="False" />
+    <option additional="-debug&#xA;-xml doc/bin/janicek-core.xml" />
+  </build>
+  <!-- haxelib libraries -->
+  <haxelib>
+    <!-- example: <library name="..." /> -->
+  </haxelib>
+  <!-- Class files to compile (other referenced classes will automatically be included) -->
+  <compileTargets>
+    <compile path="src\co\janicek\core\Main.hx" />
+  </compileTargets>
+  <!-- Paths to exclude from the Project Explorer tree -->
+  <hiddenPaths>
+    <!-- example: <hidden path="..." /> -->
+  </hiddenPaths>
+  <!-- Executed before build -->
+  <preBuildCommand />
+  <!-- Executed after build -->
+  <postBuildCommand alwaysRun="False">"$(CompilerPath)\haxe" $(ProjectDir)\build-node.hxml
+"$(CompilerPath)\haxe" $(ProjectDir)\build-demo.hxml</postBuildCommand>
+  <!-- Other project options -->
+  <options>
+    <option showHiddenPaths="False" />
+    <option testMovie="OpenDocument" />
+    <option testMovieCommand="bin/index.html" />
+  </options>
+  <!-- Plugin storage -->
+  <storage />
+</project>
