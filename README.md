@@ -6,10 +6,14 @@ Haxe bindings for LevelDB Node.js modules. LevelUP, and Multilevel.
 Tested with Haxe 3.0, LevelUP 0.6.2, Multilevel 2.0.3.
 
 GitHub -> https://github.com/rjanicek/leveldb-node-haxe
+	
 licence -> https://github.com/rjanicek/leveldb-node-haxe/blob/master/MIT.LICENSE
+	
 multilevel by Julian Gruber - MIT -> https://github.com/juliangruber/multilevel
+	
 node-levelup by Rod Vagg - MIT -> https://github.com/rvagg/node-levelup
-leveldb by Sanjay Ghemawat and Jeff Dean - New BSD -> https://code.google.com/p/leveldb/
+	
+leveldb by Sanjay Ghemawat and Jeff Dean - New BSD -> https://code.google.com/p/leveldb/	
 
 ###In App database usage
 ```haxe
@@ -48,7 +52,7 @@ import js.Node.*;
 
 class MainDatabaseServer{
 	public static function main() {
-		var db = levelup(__dirname + '/db/master');
+		var db = levelup(__dirname + "/db");
 		net.createServer(function (c:Dynamic) {
 			c.pipe(multilevel.server(db)).pipe(c);
 		}).listen(3000);
@@ -85,6 +89,7 @@ class MainDatabaseClient{
 Important considerations
 ------------------------
 
-LevelDB does not yet work on Windows. You can however use Multilevel to connect to a LevelDB instance running on a supported platform. This can be a VM running inside of Windows.
-see -> https://github.com/rvagg/node-levelup#tested--supported-platforms
+LevelDB does not yet work on Windows. You can however use Multilevel on Windows to connect to a LevelDB instance running on a supported platform. This can be a VM running on Windows.
+
+See -> https://github.com/rvagg/node-levelup#tested--supported-platforms
 
