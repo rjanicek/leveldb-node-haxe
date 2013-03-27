@@ -16,6 +16,10 @@ node-levelup by Rod Vagg - MIT -> https://github.com/rvagg/node-levelup
 leveldb by Sanjay Ghemawat and Jeff Dean - New BSD -> https://code.google.com/p/leveldb/	
 
 ###In App database usage
+Install node modules
+```bash
+npm install levelup
+```
 ```haxe
 import js.Node.*;
 import js.node.LevelUP.LevelUPInstance.*;
@@ -42,8 +46,12 @@ class Main {
 ```
 
 ##Client / Server usage
-
 ###Database server
+Install node modules
+```bash
+npm install levelup
+npm install multilevel
+```
 ```haxe
 import js.node.LevelUP.LevelUPInstance.*;
 import js.node.Multilevel.MultilevelInstance.*;
@@ -61,6 +69,10 @@ class MainDatabaseServer{
 ```
 
 ###Database client
+Install node modules
+```bash
+npm install multilevel
+```
 ```haxe
 import js.Node.*;
 import js.node.LevelUP;
